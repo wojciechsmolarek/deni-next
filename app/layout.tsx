@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display } from "next/font/google"
+import { Merriweather } from "next/font/google"
 import "./globals.css"
 
 // Initialize the Playfair Display font
-const playfair = Playfair_Display({
+const merriweather = Merriweather({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
@@ -47,12 +47,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pl" className={playfair.variable}>
+    <html lang="pl" className={merriweather.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/deni-logo.png" />
       </head>
-      <body className="font-playfair">{children}</body>
+      <body className="font-merriweather">{children}</body>
     </html>
   )
 }

@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        playfair: ["var(--font-playfair)", "serif"],
+        merriweather: ["var(--font-merriweather)", "serif"],
         corsiva: ["Monotype Corsiva", "cursive"],
       },
       colors: {

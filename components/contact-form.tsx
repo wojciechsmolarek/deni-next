@@ -110,7 +110,7 @@ export default function ContactForm() {
   return (
     <Card className="shadow-lg">
       <CardHeader>
-        <CardTitle className="text-2xl font-corsiva">Wyślij zapytanie</CardTitle>
+        <CardTitle className="text-2xl">Wyślij zapytanie</CardTitle>
         <CardDescription>Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.</CardDescription>
       </CardHeader>
       <CardContent>

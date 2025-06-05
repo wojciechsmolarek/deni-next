@@ -40,22 +40,22 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: "🏭",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory h-6 w-6"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18h1"></path><path d="M12 18h1"></path><path d="M7 18h1"></path></svg>',
       title: "Nowoczesny park maszynowy",
       description: "Dysponujemy najnowocześniejszym sprzętem do szycia przemysłowego",
     },
     {
-      icon: "👥",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-6 w-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
       title: "Doświadczony zespół",
       description: "Nasi specjaliści mają wieloletnie doświadczenie w branży",
     },
     {
-      icon: "📦",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench h-6 w-6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>',
       title: "Duże wolumeny",
       description: "Realizujemy zamówienia seryjne i projekty w dużych ilościach",
     },
     {
-      icon: "✅",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-6 w-6"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>',
       title: "Najwyższa jakość",
       description: "Gwarantujemy wysoką jakość wykonania i terminowość",
     },
@@ -158,7 +158,7 @@ export default function HomePage() {
               <Card key={index} className="hover:shadow-lg transition-shadow border shadow-sm">
                 <CardHeader>
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-2xl font-corsiva">{service.title}</CardTitle>
+                  <CardTitle className="text-2xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-foreground/80">{service.description}</CardDescription>
@@ -185,8 +185,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  {feature.icon}
+                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl" dangerouslySetInnerHTML={{ __html: feature.icon }}>
                 </div>
                 <h3 className="text-2xl font-corsiva text-foreground mb-2">{feature.title}</h3>
                 <p className="text-foreground/80">{feature.description}</p>
@@ -213,11 +212,11 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">15+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">8+</div>
                   <div className="text-foreground/80">Lat doświadczenia</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">500+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">100+</div>
                   <div className="text-foreground/80">Zrealizowanych projektów</div>
                 </div>
               </div>
@@ -256,20 +255,20 @@ export default function HomePage() {
               <div className="grid md:grid-cols-1 gap-8">
                 <div className="flex items-center space-x-4">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
-                    📍
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-6 w-6 text-white"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>
                   <div>
-                    <span className="text-xl font-corsiva mb-1">Adres</span>
+                    <span className="text-xl mb-1">Adres</span>
                     <p className="text-foreground/80">Jarocin ul. Wojska polskiego 47, Polska</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
-                    📞
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-6 w-6 text-white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   </div>
                   <div>
-                    <span className="text-xl font-corsiva mb-1">Telefon</span>
+                    <span className="text-xl mb-1">Telefon</span>
                     <p className="text-foreground/80">
                       <a href="tel:+48607442592">+48 607 442 592</a>
                     </p>
@@ -278,10 +277,10 @@ export default function HomePage() {
 
                 <div className="flex items-center space-x-4">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
-                    📧
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-6 w-6 text-white"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                   </div>
                   <div>
-                    <span className="text-xl font-corsiva mb-1">Email</span>
+                    <span className="text-xl mb-1">Email</span>
                     <p className="text-foreground/80">
                       <a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a>
                     </p>
@@ -323,7 +322,7 @@ export default function HomePage() {
             <div className="text-center mt-6">
               <Button asChild variant="outline" className="font-corsiva text-lg">
                 <a href="https://maps.app.goo.gl/EYheRyx9HGrt2aJeA" target="_blank" rel="noopener noreferrer">
-                  📍 Otwórz w Google Maps
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-2 h-4 w-4"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> Otwórz w Google Maps
                 </a>
               </Button>
             </div>
@@ -372,7 +371,7 @@ export default function HomePage() {
           <div className="border-t border-border mt-8 pt-8 text-center text-foreground/70">
             <p>
               &copy; 2025 Deni. Wszystkie prawa zastrzeżone. Projekt i wykonanie:{" "}
-              <a href="https://www.wojciechsmolarek.pl/">wojciechsmolarek.pl</a>
+              <a href="https://www.wojciechsmolarek.pl/" className="underline">wojciechsmolarek.pl</a>
             </p>
           </div>
         </div>

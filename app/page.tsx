@@ -130,11 +130,13 @@ export default function HomePage() {
             <div className="relative">
               <div className="bg-card rounded-2xl shadow-lg border p-8">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero.jpg-goCt44o6ckyMICLPuFstNRnuecb2ix.jpeg"
+                  src="/hero.webp"
                   alt="Kolorowe nici do szycia"
                   width={500}
                   height={400}
                   className="rounded-lg w-full"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -344,7 +346,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h4 className="text-xl font-corsiva mb-4">Usługi</h4>
+              <span className="block text-xl font-corsiva mb-4">Usługi</span>
               <ul className="space-y-2 text-foreground/70">
                 <li>Kanapy modułowe</li>
                 <li>Poduszki tapicerskie</li>
@@ -354,7 +356,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h4 className="text-xl font-corsiva mb-4">Kontakt</h4>
+              <span className="block text-xl font-corsiva mb-4">Kontakt</span>
               <ul className="space-y-2 text-foreground/70">
                 <li>ul. Wojska polskiego 47</li>
                 <li>63-200 Jarocin, Polska</li>

@@ -70,7 +70,7 @@ export default function HomePage() {
       <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="logo text-secondary">DENI</span>
+            <a href="/"><span className="logo text-secondary">DENI</span></a>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a
@@ -81,7 +81,7 @@ export default function HomePage() {
             </a>
             <a href="#o-nas" className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl">
               O nas
-            </a>
+            </a>           
             <a
               href="#kontakt"
               className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
@@ -93,9 +93,9 @@ export default function HomePage() {
               className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
             >
               Lokalizacja
-            </a>
+            </a>             
           </nav>
-          <Button className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">Skontaktuj się</Button>
+          <a href="#kontakt" className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">Skontaktuj się</a>
         </div>
       </header>
 
@@ -109,19 +109,23 @@ export default function HomePage() {
                 Jarocin, Polska
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-                Profesjonalna <span className="text-secondary">szwalnia usługowa</span>
+                Profesjonalna <span className="text-secondary">szwalnia tapicerki meblowej</span>
               </h1>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof oraz firm z branży
-                akustycznej. Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
+                Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof i narożników. Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl">
+                <Button 
+                  size="lg" 
+                  onClick={() => router.push('/#uslugi')}
+                  className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl"
+                >
                   Zobacz nasze usługi
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button
                   size="lg"
+                  onClick={() => router.push('/#kontakt')}
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 font-corsiva text-xl"
                 >
@@ -261,8 +265,8 @@ export default function HomePage() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-corsiva mb-1">Adres</h3>
-                    <p className="text-foreground/80">Jarocin, Polska</p>
+                    <span className="text-xl font-corsiva mb-1">Adres</span>
+                    <p className="text-foreground/80">Jarocin ul. Wojska polskiego 47, Polska</p>
                   </div>
                 </div>
 
@@ -271,8 +275,8 @@ export default function HomePage() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-corsiva mb-1">Telefon</h3>
-                    <p className="text-foreground/80">+48 XXX XXX XXX</p>
+                    <span className="text-xl font-corsiva mb-1">Telefon</span>
+                    <p className="text-foreground/80"><a href="tel:+48607442592">+48 607 442 592</a></p>
                   </div>
                 </div>
 
@@ -281,8 +285,8 @@ export default function HomePage() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-corsiva mb-1">Email</h3>
-                    <p className="text-foreground/80">kontakt@deni.pl</p>
+                    <span className="text-xl font-corsiva mb-1">Email</span>
+                    <p className="text-foreground/80"><a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a></p>
                   </div>
                 </div>
               </div>
@@ -351,20 +355,20 @@ export default function HomePage() {
             <Card className="overflow-hidden shadow-lg">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.123456789!2d17.5!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAwJzAwLjAiTiAxN8KwMzAnMDAuMCJF!5e0!3m2!1spl!2spl!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.253565037896!2d17.507154!3d51.965801899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470523bde81441c3%3A0xb082fb990b8d6cf8!2sDENI%20-%20Danuta%20Smolarek!5e0!3m2!1spl!2spl!4v1749113469199!5m2!1spl!2spl"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Lokalizacja DENI Szwalnia w Jarocinie"
+                  title="Lokalizacja DENI w Jarocinie"
                 ></iframe>
               </CardContent>
             </Card>
             <div className="text-center mt-6">
               <Button asChild variant="outline" className="font-corsiva text-lg">
-                <a href="https://maps.app.goo.gl/3XyQJCAmYw5QEPvX6" target="_blank" rel="noopener noreferrer">
+                <a href="https://maps.app.goo.gl/EYheRyx9HGrt2aJeA" target="_blank" rel="noopener noreferrer">
                   <MapPin className="mr-2 h-4 w-4" />
                   Otwórz w Google Maps
                 </a>
@@ -400,15 +404,16 @@ export default function HomePage() {
             <div>
               <h4 className="text-xl font-corsiva mb-4">Kontakt</h4>
               <ul className="space-y-2 text-foreground/70">
-                <li>Jarocin, Polska</li>
-                <li>+48 XXX XXX XXX</li>
-                <li>kontakt@deni.pl</li>
+                <li>ul. Wojska polskiego 47</li>
+                <li>63-200 Jarocin, Polska</li>
+                <li>email: <a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a></li>
+                <li>tel: <a href="tel:+48607442592">607 442 592</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-border mt-8 pt-8 text-center text-foreground/70">
-            <p>&copy; 2024 Deni. Wszystkie prawa zastrzeżone.</p>
+            <p>&copy; 2025 Deni. Wszystkie prawa zastrzeżone. Projekt i wykonanie: <a href="https://www.wojciechsmolarek.pl/">wojciechsmolarek.pl</a></p>
           </div>
         </div>
       </footer>

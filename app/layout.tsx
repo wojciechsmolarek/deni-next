@@ -1,19 +1,20 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter } from 'next/font/google';
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
   description:
     "Szwalnia tapicerki meblowej w Jarocinie oferuje profesjonalne szycie poduszek dekoracyjnych, materacy, narożników. Produkty szyte ze niebywałą staronnością. Zapraszamy do współpracy.",
-  keywords:
-    "szwalnia, tapicerka meblowa, poduszki dekoracyjne, materace, narożniki, Jarocin, szycie, meble tapicerowane",
-  authors: [{ name: "DENI Szwalnia" }],
-  creator: "DENI Szwalnia",
-  publisher: "DENI Szwalnia",
+  authors: [{ name: "wojciechsmolarek.pl" }],
+  creator: "wojciechsmolarek.pl",
+  publisher: "DENI Danuta Smolarek",
   robots: "index, follow",
   alternates: {
     canonical: "https://deni.com.pl/",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Szwalnia tapicerki meblowej w Jarocinie oferuje profesjonalne szycie poduszek dekoracyjnych, materacy, narożników. Produkty szyte ze niebywałą staronnością. Zapraszamy do współpracy.",
     url: "https://deni.com.pl/",
-    siteName: "DENI Szwalnia",
+    siteName: "DENI Danuta Smolarek",
     locale: "pl_PL",
     type: "website",
   },
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
     title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
     description:
       "Szwalnia tapicerki meblowej w Jarocinie oferuje profesjonalne szycie poduszek dekoracyjnych, materacy, narożników. Produkty szyte ze niebywałą staronnością. Zapraszamy do współpracy.",
-  },
-    generator: 'v0.dev'
+  }
 }
 
 export default function RootLayout({
@@ -42,10 +42,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pl">
+    <html lang="pl" className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href="https://deni.com.pl/" />
+        <link rel="apple-touch-icon" href="/deni-logo.png" />        
       </head>
       <body className={inter.className}>{children}</body>
     </html>

@@ -1,12 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google';
+import { Playfair_Display } from "next/font/google"
 import "./globals.css"
 
-export const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-});
+// Initialize the Playfair Display font
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+})
 
 export const metadata: Metadata = {
   title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
@@ -33,7 +37,8 @@ export const metadata: Metadata = {
     title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
     description:
       "Szwalnia tapicerki meblowej w Jarocinie oferuje profesjonalne szycie poduszek dekoracyjnych, materacy, narożników. Produkty szyte ze niebywałą staronnością. Zapraszamy do współpracy.",
-  }
+  },
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -42,12 +47,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pl" className={inter.className}>
+    <html lang="pl" className={playfair.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/deni-logo.png" />        
+        <link rel="apple-touch-icon" href="/deni-logo.png" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className="font-playfair">{children}</body>
     </html>
   )
 }

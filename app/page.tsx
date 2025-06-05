@@ -1,11 +1,8 @@
-import { ArrowRight, CheckCircle, Factory, MapPin, Phone, Mail, Users, Wrench, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import Image from "next/image"
+import ContactForm from "@/components/contact-form"
 
 export default function HomePage() {
   const services = [
@@ -43,22 +40,22 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: <Factory className="h-6 w-6" />,
+      icon: "🏭",
       title: "Nowoczesny park maszynowy",
       description: "Dysponujemy najnowocześniejszym sprzętem do szycia przemysłowego",
     },
     {
-      icon: <Users className="h-6 w-6" />,
+      icon: "👥",
       title: "Doświadczony zespół",
       description: "Nasi specjaliści mają wieloletnie doświadczenie w branży",
     },
     {
-      icon: <Wrench className="h-6 w-6" />,
+      icon: "📦",
       title: "Duże wolumeny",
       description: "Realizujemy zamówienia seryjne i projekty w dużych ilościach",
     },
     {
-      icon: <CheckCircle className="h-6 w-6" />,
+      icon: "✅",
       title: "Najwyższa jakość",
       description: "Gwarantujemy wysoką jakość wykonania i terminowość",
     },
@@ -70,7 +67,9 @@ export default function HomePage() {
       <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <a href="/"><span className="logo text-secondary">DENI</span></a>
+            <a href="/">
+              <span className="logo text-secondary">DENI</span>
+            </a>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a
@@ -81,7 +80,7 @@ export default function HomePage() {
             </a>
             <a href="#o-nas" className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl">
               O nas
-            </a>           
+            </a>
             <a
               href="#kontakt"
               className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
@@ -93,9 +92,11 @@ export default function HomePage() {
               className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
             >
               Lokalizacja
-            </a>             
+            </a>
           </nav>
-          <a href="#kontakt" className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">Skontaktuj się</a>
+          <Button asChild className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">
+            <a href="#kontakt">Skontaktuj się</a>
+          </Button>
         </div>
       </header>
 
@@ -104,32 +105,25 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-muted text-foreground hover:bg-muted border">
-                <MapPin className="w-4 h-4 mr-1" />
-                Jarocin, Polska
-              </Badge>
+              <Badge className="mb-4 bg-muted text-foreground hover:bg-muted border">📍 Jarocin, Polska</Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
                 Profesjonalna <span className="text-secondary">szwalnia tapicerki meblowej</span>
               </h1>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof i narożników. Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
+                Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof i narożników.
+                Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  onClick={() => router.push('/#uslugi')}
-                  className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl"
-                >
-                  Zobacz nasze usługi
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl">
+                  <a href="#uslugi">Zobacz nasze usługi →</a>
                 </Button>
                 <Button
                   size="lg"
-                  onClick={() => router.push('/#kontakt')}
+                  asChild
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 font-corsiva text-xl"
                 >
-                  Skontaktuj się z nami
+                  <a href="#kontakt">Skontaktuj się z nami</a>
                 </Button>
               </div>
             </div>
@@ -191,7 +185,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                   {feature.icon}
                 </div>
                 <h3 className="text-2xl font-corsiva text-foreground mb-2">{feature.title}</h3>
@@ -261,8 +255,8 @@ export default function HomePage() {
             <div className="space-y-8">
               <div className="grid md:grid-cols-1 gap-8">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-white" />
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+                    📍
                   </div>
                   <div>
                     <span className="text-xl font-corsiva mb-1">Adres</span>
@@ -271,72 +265,32 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-white" />
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+                    📞
                   </div>
                   <div>
                     <span className="text-xl font-corsiva mb-1">Telefon</span>
-                    <p className="text-foreground/80"><a href="tel:+48607442592">+48 607 442 592</a></p>
+                    <p className="text-foreground/80">
+                      <a href="tel:+48607442592">+48 607 442 592</a>
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-white" />
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+                    📧
                   </div>
                   <div>
                     <span className="text-xl font-corsiva mb-1">Email</span>
-                    <p className="text-foreground/80"><a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a></p>
+                    <p className="text-foreground/80">
+                      <a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl font-corsiva">Wyślij zapytanie</CardTitle>
-                <CardDescription>Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">Imię</Label>
-                      <Input id="firstName" placeholder="Twoje imię" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Nazwisko</Label>
-                      <Input id="lastName" placeholder="Twoje nazwisko" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="twoj@email.pl" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefon</Label>
-                    <Input id="phone" type="tel" placeholder="+48 XXX XXX XXX" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Firma (opcjonalnie)</Label>
-                    <Input id="company" placeholder="Nazwa firmy" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Wiadomość</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Opisz swój projekt lub zadaj pytanie..."
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 font-corsiva text-lg">
-                    <Send className="mr-2 h-4 w-4" />
-                    Wyślij zapytanie
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -359,7 +313,7 @@ export default function HomePage() {
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
-                  allowFullScreen
+                  allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Lokalizacja DENI w Jarocinie"
@@ -369,8 +323,7 @@ export default function HomePage() {
             <div className="text-center mt-6">
               <Button asChild variant="outline" className="font-corsiva text-lg">
                 <a href="https://maps.app.goo.gl/EYheRyx9HGrt2aJeA" target="_blank" rel="noopener noreferrer">
-                  <MapPin className="mr-2 h-4 w-4" />
-                  Otwórz w Google Maps
+                  📍 Otwórz w Google Maps
                 </a>
               </Button>
             </div>
@@ -406,14 +359,21 @@ export default function HomePage() {
               <ul className="space-y-2 text-foreground/70">
                 <li>ul. Wojska polskiego 47</li>
                 <li>63-200 Jarocin, Polska</li>
-                <li>email: <a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a></li>
-                <li>tel: <a href="tel:+48607442592">607 442 592</a></li>
+                <li>
+                  email: <a href="mailto:biuro@deni.com.pl">biuro@deni.com.pl</a>
+                </li>
+                <li>
+                  tel: <a href="tel:+48607442592">607 442 592</a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-border mt-8 pt-8 text-center text-foreground/70">
-            <p>&copy; 2025 Deni. Wszystkie prawa zastrzeżone. Projekt i wykonanie: <a href="https://www.wojciechsmolarek.pl/">wojciechsmolarek.pl</a></p>
+            <p>
+              &copy; 2025 Deni. Wszystkie prawa zastrzeżone. Projekt i wykonanie:{" "}
+              <a href="https://www.wojciechsmolarek.pl/">wojciechsmolarek.pl</a>
+            </p>
           </div>
         </div>
       </footer>

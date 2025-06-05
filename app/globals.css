@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Monotype Corsiva";
-  src: url("/fonts/monotype-corsiva.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -51,9 +43,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  .font-corsiva {
-    font-family: "Monotype Corsiva", cursive;
-  }
   .logo {
     font-family: "Monotype Corsiva", cursive;
     font-size: 2.5rem;
@@ -67,4 +56,13 @@
   h6 {
     font-family: "Monotype Corsiva", cursive;
   }
+}
+
+/* Monotype Corsiva font */
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("/fonts/monotype-corsiva.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

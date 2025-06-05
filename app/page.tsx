@@ -3,27 +3,43 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
+import {
+  Sofa,
+  Square,
+  Bed,
+  Home,
+  Armchair,
+  Circle,
+  Factory,
+  Users,
+  Package,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
+} from 'lucide-react'
 
 // Dynamiczne importowanie komponentów
 const ContactForm = dynamic(() => import('@/components/contact-form'), {
-  loading: () => <div className="animate-pulse bg-muted h-[400px] rounded-lg" />
+  loading: () => <div className="animate-pulse bg-muted h-[400px] rounded-lg" />,
+  ssr: false
 })
 
-// Dynamiczne importowanie ikon
+// Mapowanie ikon
 const icons = {
-  Sofa: dynamic(() => import('lucide-react').then(mod => mod.Sofa)),
-  Square: dynamic(() => import('lucide-react').then(mod => mod.Square)),
-  Bed: dynamic(() => import('lucide-react').then(mod => mod.Bed)),
-  Home: dynamic(() => import('lucide-react').then(mod => mod.Home)),
-  Armchair: dynamic(() => import('lucide-react').then(mod => mod.Armchair)),
-  Circle: dynamic(() => import('lucide-react').then(mod => mod.Circle)),
-  Factory: dynamic(() => import('lucide-react').then(mod => mod.Factory)),
-  Users: dynamic(() => import('lucide-react').then(mod => mod.Users)),
-  Package: dynamic(() => import('lucide-react').then(mod => mod.Package)),
-  CircleCheckBig: dynamic(() => import('lucide-react').then(mod => mod.CircleCheckBig)),
-  MapPin: dynamic(() => import('lucide-react').then(mod => mod.MapPin)),
-  Phone: dynamic(() => import('lucide-react').then(mod => mod.Phone)),
-  Mail: dynamic(() => import('lucide-react').then(mod => mod.Mail)),
+  Sofa,
+  Square,
+  Bed,
+  Home,
+  Armchair,
+  Circle,
+  Factory,
+  Users,
+  Package,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
 }
 
 export default function HomePage() {

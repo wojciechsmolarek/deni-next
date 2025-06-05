@@ -46,17 +46,12 @@
   body {
     @apply bg-background text-foreground;
   }
-  .logo {
-    font-family: "Monotype Corsiva", cursive;
-    font-size: 2.5rem;
-    letter-spacing: 0.05em;
-  }
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: "Monotype Corsiva", cursive;
+    font-family: "Playfair Display", serif;
   }
 }

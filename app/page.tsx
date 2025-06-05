@@ -3,59 +3,60 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import ContactForm from "@/components/contact-form"
+import { Sofa, Square, Bed, Home, Armchair, Circle, Factory, Users, Package, CircleCheckBig, MapPin, Phone, Mail } from "lucide-react"
 
 export default function HomePage() {
   const services = [
     {
       title: "Kanapy modułowe",
       description: "Profesjonalne wykonanie kanap modułowych dla producentów mebli",
-      icon: "🛋️",
+      icon: <Sofa className="h-8 w-8" />,
     },
     {
       title: "Poduszki",
       description: "Wysokiej jakości poduszki tapicerskie i dekoracyjne",
-      icon: "🪑",
+      icon: <Square className="h-8 w-8" />,
     },
     {
       title: "Łóżka",
       description: "Tapicerowane łóżka i elementy sypialniane",
-      icon: "🛏️",
+      icon: <Bed className="h-8 w-8" />,
     },
     {
       title: "Komplety tapicerowane",
       description: "Kompletne zestawy mebli tapicerowanych",
-      icon: "🏠",
+      icon: <Home className="h-8 w-8" />,
     },
     {
       title: "Sofy i fotele",
       description: "Profesjonalne wykonanie sof i foteli dla biznesu",
-      icon: "🪑",
+      icon: <Armchair className="h-8 w-8" />,
     },
     {
       title: "Pufy",
       description: "Stylowe pufy i dodatki tapicerskie",
-      icon: "⭕",
+      icon: <Circle className="h-8 w-8" />,
     },
   ]
 
   const features = [
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-factory h-6 w-6"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18h1"></path><path d="M12 18h1"></path><path d="M7 18h1"></path></svg>',
+      icon: <Factory className="h-6 w-6" />,
       title: "Nowoczesny park maszynowy",
       description: "Dysponujemy najnowocześniejszym sprzętem do szycia przemysłowego",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users h-6 w-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+      icon: <Users className="h-6 w-6" />,
       title: "Doświadczony zespół",
       description: "Nasi specjaliści mają wieloletnie doświadczenie w branży",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-wrench h-6 w-6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>',
+      icon: <Package className="h-6 w-6" />,
       title: "Duże wolumeny",
       description: "Realizujemy zamówienia seryjne i projekty w dużych ilościach",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-check-big h-6 w-6"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>',
+      icon: <CircleCheckBig className="h-6 w-6" />,
       title: "Najwyższa jakość",
       description: "Gwarantujemy wysoką jakość wykonania i terminowość",
     },
@@ -68,40 +69,47 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <a href="/" aria-label="Strona główna DENI">
-              <span className="logo text-secondary">DENI</span>
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="162" height="60" viewBox="0 0 162 60" preserveAspectRatio="xMidYMid meet" className="h-8 w-auto">
+                <g transform="translate(0,60) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+                  <path d="M1277 470 c-26 -21 -56 -98 -72 -184 -4 -20 -11 -39 -16 -41 -4 -3 -25 47 -45 112 -21 65 -38 119 -39 120 -5 9 -121 -29 -139 -47 -28 -25 -40 -74 -26 -101 18 -33 30 -21 24 24 -5 36 -2 45 18 63 12 12 38 25 56 29 27 6 32 4 32 -13 0 -30 -48 -210 -65 -242 -19 -37 -51 -47 -76 -24 -15 14 -22 15 -32 5 -9 -10 -8 -15 7 -27 39 -28 93 -9 120 44 7 15 23 69 36 120 12 51 25 91 27 88 3 -3 18 -44 34 -91 16 -47 37 -102 48 -122 l18 -36 13 54 c27 116 62 225 78 242 10 11 27 17 46 15 22 -2 31 1 31 12 0 24 -48 24 -78 0z"/>
+                  <path d="M322 457 c-53 -20 -99 -63 -118 -112 -16 -43 -16 -48 -1 -81 9 -19 23 -34 32 -34 21 0 19 26 -5 50 -26 26 -25 49 3 91 44 66 151 98 217 64 42 -22 60 -53 60 -106 0 -83 -67 -149 -152 -149 l-38 0 15 38 c16 43 58 203 53 207 -2 2 -15 1 -29 -2 -20 -4 -25 -10 -22 -23 5 -18 -32 -170 -49 -203 -5 -10 -19 -22 -31 -26 -15 -6 3 -10 65 -15 109 -10 162 10 205 75 39 59 40 144 3 184 -48 52 -132 69 -208 42z"/>
+                  <path d="M666 460 c-68 -21 -113 -103 -90 -164 7 -17 34 -22 34 -6 0 5 -5 20 -11 34 -22 47 19 105 85 122 31 7 32 0 11 -77 -53 -185 -55 -189 -80 -195 -52 -13 -20 -19 103 -19 138 0 166 9 160 48 -5 32 -26 32 -30 0 -3 -25 -7 -28 -38 -26 -103 5 -130 7 -130 9 0 2 10 33 21 69 l22 65 39 0 c28 0 41 -5 45 -17 6 -15 8 -14 14 7 4 14 7 34 8 45 0 18 0 19 -10 3 -7 -12 -22 -18 -49 -18 -44 0 -45 1 -28 65 l12 45 54 0 c47 0 55 -3 60 -22 5 -21 6 -21 13 -2 17 42 13 44 -88 43 -54 0 -111 -5 -127 -9z"/>
+                  <path d="M1369 454 c-11 -13 -9 -14 14 -9 l26 7 -30 -114 c-16 -62 -32 -121 -35 -130 -3 -9 -18 -20 -34 -23 -53 -12 -32 -25 40 -25 40 0 70 4 70 10 0 6 -9 10 -20 10 -11 0 -20 3 -20 6 0 3 14 62 32 131 30 118 33 125 60 130 48 10 30 23 -31 23 -41 0 -62 -5 -72 -16z"/>
+                </g>
+              </svg>
             </a>
           </div>
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Menu główne">
             <a
               href="#uslugi"
-              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji usługi"
             >
               Usługi
             </a>
             <a 
               href="#o-nas" 
-              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji o nas"
             >
               O nas
             </a>
             <a
               href="#kontakt"
-              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji kontakt"
             >
               Kontakt
             </a>
             <a
               href="#lokalizacja"
-              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji lokalizacja"
             >
               Lokalizacja
             </a>
           </nav>
-          <Button asChild className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">
+          <Button asChild className="bg-secondary hover:bg-secondary/90 font-playfair text-lg">
             <a href="#kontakt" aria-label="Przejdź do formularza kontaktowego">Skontaktuj się</a>
           </Button>
         </div>
@@ -121,14 +129,14 @@ export default function HomePage() {
                 Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl">
+                <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 font-playfair text-xl">
                   <a href="#uslugi" aria-label="Przejdź do sekcji usługi">Zobacz nasze usługi →</a>
                 </Button>
                 <Button
                   size="lg"
                   asChild
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10 font-corsiva text-xl"
+                  className="border-primary text-primary hover:bg-primary/10 font-playfair text-xl"
                 >
                   <a href="#kontakt" aria-label="Przejdź do formularza kontaktowego">Skontaktuj się z nami</a>
                 </Button>
@@ -137,11 +145,11 @@ export default function HomePage() {
             <div className="relative">
               <div className="bg-card rounded-2xl shadow-lg border p-8">
                 <Image
-                  src="/hero.webp"
+                  src="/img/regal-z-nicmi-do-szycia.webp"
                   alt="Kolorowe nici do szycia - przykładowe materiały używane w naszej szwalni"
                   width={500}
-                  height={400}
-                  className="rounded-lg w-full"
+                  height={300}
+                  className="rounded-lg w-full h-[400px] object-cover"
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -194,9 +202,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" role="list" aria-label="Lista zalet">
             {features.map((feature, index) => (
               <div key={index} className="text-center" role="listitem">
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl" aria-hidden="true" dangerouslySetInnerHTML={{ __html: feature.icon }}>
+                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl" aria-hidden="true">
+                  {feature.icon}
                 </div>
-                <h3 className="text-2xl font-corsiva text-foreground mb-2">{feature.title}</h3>
+                <h3 className="text-2xl font-playfair text-foreground mb-2">{feature.title}</h3>
                 <p className="text-foreground/80">{feature.description}</p>
               </div>
             ))}
@@ -221,26 +230,24 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 gap-6" role="list" aria-label="Statystyki firmy">
                 <div role="listitem">
-                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">8+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-playfair">8+</div>
                   <div className="text-foreground/80">Lat doświadczenia</div>
                 </div>
                 <div role="listitem">
-                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">100+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-playfair">100+</div>
                   <div className="text-foreground/80">Zrealizowanych projektów</div>
                 </div>
               </div>
             </div>
             <div className="relative">
               <div className="bg-card p-4 rounded-2xl shadow-lg border">
-                <div className="flex justify-center items-center p-8">
-                  <div className="logo text-7xl text-secondary" aria-label="Logo firmy DENI">DENI</div>
-                </div>
-                <div className="flex justify-center gap-4 mt-4" aria-hidden="true">
-                  <div className="w-4 h-4 rounded-full bg-secondary"></div>
-                  <div className="w-4 h-4 rounded-full bg-primary"></div>
-                  <div className="w-4 h-4 rounded-full bg-accent"></div>
-                  <div className="w-4 h-4 rounded-full bg-[#ff9f1c]"></div>
-                  <div className="w-4 h-4 rounded-full bg-[#ff69b4]"></div>
+                <div className="relative w-full h-96 overflow-hidden rounded-lg">
+                  <Image
+                    src="/img/stanowisko-do-szycia-tapicerki-meblowej.webp"
+                    alt="Stanowisko do szycia tapicerki meblowej"
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-110"
+                  />
                 </div>
               </div>
             </div>
@@ -264,7 +271,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-1 gap-8" role="list" aria-label="Informacje kontaktowe">
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin h-6 w-6 text-white"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Adres</span>
@@ -274,7 +281,7 @@ export default function HomePage() {
 
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone h-6 w-6 text-white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Telefon</span>
@@ -286,7 +293,7 @@ export default function HomePage() {
 
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail h-6 w-6 text-white"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Email</span>
@@ -330,14 +337,14 @@ export default function HomePage() {
               </CardContent>
             </Card>
             <div className="text-center mt-6">
-              <Button asChild variant="outline" className="font-corsiva text-lg">
+              <Button asChild variant="outline" className="font-playfair text-lg">
                 <a 
                   href="https://maps.app.goo.gl/EYheRyx9HGrt2aJeA" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Otwórz lokalizację w Google Maps"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin mr-2 h-4 w-4" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> Otwórz w Google Maps
+                  <MapPin className="lucide lucide-map-pin mr-2 h-4 w-4" aria-hidden="true" /> Otwórz w Google Maps
                 </a>
               </Button>
             </div>
@@ -351,7 +358,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <span className="logo text-secondary" aria-label="Logo DENI">DENI</span>
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="162" height="60" viewBox="0 0 162 60" preserveAspectRatio="xMidYMid meet" className="h-8 w-auto">
+                <g transform="translate(0,60) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+                  <path d="M1277 470 c-26 -21 -56 -98 -72 -184 -4 -20 -11 -39 -16 -41 -4 -3 -25 47 -45 112 -21 65 -38 119 -39 120 -5 9 -121 -29 -139 -47 -28 -25 -40 -74 -26 -101 18 -33 30 -21 24 24 -5 36 -2 45 18 63 12 12 38 25 56 29 27 6 32 4 32 -13 0 -30 -48 -210 -65 -242 -19 -37 -51 -47 -76 -24 -15 14 -22 15 -32 5 -9 -10 -8 -15 7 -27 39 -28 93 -9 120 44 7 15 23 69 36 120 12 51 25 91 27 88 3 -3 18 -44 34 -91 16 -47 37 -102 48 -122 l18 -36 13 54 c27 116 62 225 78 242 10 11 27 17 46 15 22 -2 31 1 31 12 0 24 -48 24 -78 0z"/>
+                  <path d="M322 457 c-53 -20 -99 -63 -118 -112 -16 -43 -16 -48 -1 -81 9 -19 23 -34 32 -34 21 0 19 26 -5 50 -26 26 -25 49 3 91 44 66 151 98 217 64 42 -22 60 -53 60 -106 0 -83 -67 -149 -152 -149 l-38 0 15 38 c16 43 58 203 53 207 -2 2 -15 1 -29 -2 -20 -4 -25 -10 -22 -23 5 -18 -32 -170 -49 -203 -5 -10 -19 -22 -31 -26 -15 -6 3 -10 65 -15 109 -10 162 10 205 75 39 59 40 144 3 184 -48 52 -132 69 -208 42z"/>
+                  <path d="M666 460 c-68 -21 -113 -103 -90 -164 7 -17 34 -22 34 -6 0 5 -5 20 -11 34 -22 47 19 105 85 122 31 7 32 0 11 -77 -53 -185 -55 -189 -80 -195 -52 -13 -20 -19 103 -19 138 0 166 9 160 48 -5 32 -26 32 -30 0 -3 -25 -7 -28 -38 -26 -103 5 -130 7 -130 9 0 2 10 33 21 69 l22 65 39 0 c28 0 41 -5 45 -17 6 -15 8 -14 14 7 4 14 7 34 8 45 0 18 0 19 -10 3 -7 -12 -22 -18 -49 -18 -44 0 -45 1 -28 65 l12 45 54 0 c47 0 55 -3 60 -22 5 -21 6 -21 13 -2 17 42 13 44 -88 43 -54 0 -111 -5 -127 -9z"/>
+                  <path d="M1369 454 c-11 -13 -9 -14 14 -9 l26 7 -30 -114 c-16 -62 -32 -121 -35 -130 -3 -9 -18 -20 -34 -23 -53 -12 -32 -25 40 -25 40 0 70 4 70 10 0 6 -9 10 -20 10 -11 0 -20 3 -20 6 0 3 14 62 32 131 30 118 33 125 60 130 48 10 30 23 -31 23 -41 0 -62 -5 -72 -16z"/>
+                </g>
+              </svg>
               </div>
               <p className="text-foreground/70">
                 Profesjonalna szwalnia usługowa z Jarocina. Sprawdzony partner dla biznesu.
@@ -359,7 +373,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <span className="block text-xl font-corsiva mb-4">Usługi</span>
+              <span className="block text-xl font-playfair mb-4">Usługi</span>
               <ul className="space-y-2 text-foreground/70" role="list" aria-label="Lista usług">
                 <li>Kanapy modułowe</li>
                 <li>Poduszki tapicerskie</li>
@@ -369,7 +383,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <span className="block text-xl font-corsiva mb-4">Kontakt</span>
+              <span className="block text-xl font-playfair mb-4">Kontakt</span>
               <ul className="space-y-2 text-foreground/70" role="list" aria-label="Dane kontaktowe">
                 <li>ul. Wojska polskiego 47</li>
                 <li>63-200 Jarocin, Polska</li>

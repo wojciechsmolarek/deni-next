@@ -21,7 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         merriweather: ["Merriweather", "serif"],
-        corsiva: ["Monotype Corsiva", "cursive"],
+        playfair: ['"Playfair Display"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

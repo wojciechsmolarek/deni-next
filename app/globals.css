@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("/fonts/monotype-corsiva.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 140 70% 40%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 340 80% 65%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 340 80% 65%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .font-corsiva {
+    font-family: "Monotype Corsiva", cursive;
+  }
+  .logo {
+    font-family: "Monotype Corsiva", cursive;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Monotype Corsiva", cursive;
+  }
+}

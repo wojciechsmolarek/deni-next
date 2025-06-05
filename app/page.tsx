@@ -1,0 +1,417 @@
+import { ArrowRight, CheckCircle, Factory, MapPin, Phone, Mail, Users, Wrench, Send } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import Image from "next/image"
+
+export default function HomePage() {
+  const services = [
+    {
+      title: "Kanapy modułowe",
+      description: "Profesjonalne wykonanie kanap modułowych dla producentów mebli",
+      icon: "🛋️",
+    },
+    {
+      title: "Poduszki",
+      description: "Wysokiej jakości poduszki tapicerskie i dekoracyjne",
+      icon: "🪑",
+    },
+    {
+      title: "Łóżka",
+      description: "Tapicerowane łóżka i elementy sypialniane",
+      icon: "🛏️",
+    },
+    {
+      title: "Komplety tapicerowane",
+      description: "Kompletne zestawy mebli tapicerowanych",
+      icon: "🏠",
+    },
+    {
+      title: "Sofy i fotele",
+      description: "Profesjonalne wykonanie sof i foteli dla biznesu",
+      icon: "🪑",
+    },
+    {
+      title: "Pufy",
+      description: "Stylowe pufy i dodatki tapicerskie",
+      icon: "⭕",
+    },
+  ]
+
+  const features = [
+    {
+      icon: <Factory className="h-6 w-6" />,
+      title: "Nowoczesny park maszynowy",
+      description: "Dysponujemy najnowocześniejszym sprzętem do szycia przemysłowego",
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Doświadczony zespół",
+      description: "Nasi specjaliści mają wieloletnie doświadczenie w branży",
+    },
+    {
+      icon: <Wrench className="h-6 w-6" />,
+      title: "Duże wolumeny",
+      description: "Realizujemy zamówienia seryjne i projekty w dużych ilościach",
+    },
+    {
+      icon: <CheckCircle className="h-6 w-6" />,
+      title: "Najwyższa jakość",
+      description: "Gwarantujemy wysoką jakość wykonania i terminowość",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="logo text-secondary">DENI</span>
+          </div>
+          <nav className="hidden md:flex items-center space-x-8">
+            <a
+              href="#uslugi"
+              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+            >
+              Usługi
+            </a>
+            <a href="#o-nas" className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl">
+              O nas
+            </a>
+            <a
+              href="#kontakt"
+              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+            >
+              Kontakt
+            </a>
+            <a
+              href="#lokalizacja"
+              className="text-foreground/80 hover:text-secondary transition-colors font-corsiva text-xl"
+            >
+              Lokalizacja
+            </a>
+          </nav>
+          <Button className="bg-secondary hover:bg-secondary/90 font-corsiva text-lg">Skontaktuj się</Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-background to-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4 bg-muted text-foreground hover:bg-muted border">
+                <MapPin className="w-4 h-4 mr-1" />
+                Jarocin, Polska
+              </Badge>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+                Profesjonalna <span className="text-secondary">szwalnia usługowa</span>
+              </h1>
+              <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+                Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof oraz firm z branży
+                akustycznej. Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 font-corsiva text-xl">
+                  Zobacz nasze usługi
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary/10 font-corsiva text-xl"
+                >
+                  Skontaktuj się z nami
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-card rounded-2xl shadow-lg border p-8">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero.jpg-goCt44o6ckyMICLPuFstNRnuecb2ix.jpeg"
+                  alt="Kolorowe nici do szycia"
+                  width={500}
+                  height={400}
+                  className="rounded-lg w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="uslugi" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza oferta</h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Oferujemy kompleksowe usługi szycia przemysłowego dla firm z całej Polski. Realizujemy zamówienia seryjne,
+              prototypy oraz nietypowe projekty.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow border shadow-sm">
+                <CardHeader>
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <CardTitle className="text-2xl font-corsiva">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-foreground/80">{service.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">
+              Dlaczego wybierają nas firmy z całej Polski?
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Jesteśmy sprawdzonym partnerem biznesowym dla producentów mebli, firm akustycznych i innych
+              przedsiębiorstw wymagających wysokiej jakości usług szwalniczych.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-corsiva text-foreground mb-2">{feature.title}</h3>
+                <p className="text-foreground/80">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="o-nas" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">O firmie Deni</h2>
+              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                Deni to doświadczona szwalnia usługowa z Jarocina, która od lat realizuje zamówienia dla firm z całej
+                Polski. Naszymi głównymi klientami są producenci mebli, łóżek, sof, a także firmy z branży akustycznej.
+              </p>
+              <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                Wykonujemy pokrowce na głośniki oraz elementy tapicerskie. Nasza firma dysponuje nowoczesnym parkiem
+                maszynowym i doświadczonym zespołem specjalistów, co pozwala nam realizować nawet najbardziej wymagające
+                projekty w dużych wolumenach.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">15+</div>
+                  <div className="text-foreground/80">Lat doświadczenia</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-secondary mb-2 font-corsiva">500+</div>
+                  <div className="text-foreground/80">Zrealizowanych projektów</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-card p-4 rounded-2xl shadow-lg border">
+                <div className="flex justify-center items-center p-8">
+                  <div className="logo text-7xl text-secondary">DENI</div>
+                </div>
+                <div className="flex justify-center gap-4 mt-4">
+                  <div className="w-4 h-4 rounded-full bg-secondary"></div>
+                  <div className="w-4 h-4 rounded-full bg-primary"></div>
+                  <div className="w-4 h-4 rounded-full bg-accent"></div>
+                  <div className="w-4 h-4 rounded-full bg-[#ff9f1c]"></div>
+                  <div className="w-4 h-4 rounded-full bg-[#ff69b4]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="kontakt" className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-foreground">Skontaktuj się z nami</h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Jesteś zainteresowany naszymi usługami? Skontaktuj się z nami już dziś i omówmy Twój projekt.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div className="grid md:grid-cols-1 gap-8">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-corsiva mb-1">Adres</h3>
+                    <p className="text-foreground/80">Jarocin, Polska</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-corsiva mb-1">Telefon</h3>
+                    <p className="text-foreground/80">+48 XXX XXX XXX</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-corsiva mb-1">Email</h3>
+                    <p className="text-foreground/80">kontakt@deni.pl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl font-corsiva">Wyślij zapytanie</CardTitle>
+                <CardDescription>Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">Imię</Label>
+                      <Input id="firstName" placeholder="Twoje imię" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Nazwisko</Label>
+                      <Input id="lastName" placeholder="Twoje nazwisko" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" placeholder="twoj@email.pl" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Telefon</Label>
+                    <Input id="phone" type="tel" placeholder="+48 XXX XXX XXX" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Firma (opcjonalnie)</Label>
+                    <Input id="company" placeholder="Nazwa firmy" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Wiadomość</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Opisz swój projekt lub zadaj pytanie..."
+                      className="min-h-[120px]"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 font-corsiva text-lg">
+                    <Send className="mr-2 h-4 w-4" />
+                    Wyślij zapytanie
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section id="lokalizacja" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza lokalizacja</h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Znajdziesz nas w Jarocinie. Zapraszamy do odwiedzenia naszej szwalni.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden shadow-lg">
+              <CardContent className="p-0">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.123456789!2d17.5!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAwJzAwLjAiTiAxN8KwMzAnMDAuMCJF!5e0!3m2!1spl!2spl!4v1234567890"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Lokalizacja DENI Szwalnia w Jarocinie"
+                ></iframe>
+              </CardContent>
+            </Card>
+            <div className="text-center mt-6">
+              <Button asChild variant="outline" className="font-corsiva text-lg">
+                <a href="https://maps.app.goo.gl/3XyQJCAmYw5QEPvX6" target="_blank" rel="noopener noreferrer">
+                  <MapPin className="mr-2 h-4 w-4" />
+                  Otwórz w Google Maps
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-card text-foreground py-12 border-t">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="logo text-secondary">DENI</span>
+              </div>
+              <p className="text-foreground/70">
+                Profesjonalna szwalnia usługowa z Jarocina. Sprawdzony partner dla biznesu.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-corsiva mb-4">Usługi</h4>
+              <ul className="space-y-2 text-foreground/70">
+                <li>Kanapy modułowe</li>
+                <li>Poduszki tapicerskie</li>
+                <li>Łóżka tapicerowane</li>
+                <li>Komplety mebli</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-corsiva mb-4">Kontakt</h4>
+              <ul className="space-y-2 text-foreground/70">
+                <li>Jarocin, Polska</li>
+                <li>+48 XXX XXX XXX</li>
+                <li>kontakt@deni.pl</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-border mt-8 pt-8 text-center text-foreground/70">
+            <p>&copy; 2024 Deni. Wszystkie prawa zastrzeżone.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}

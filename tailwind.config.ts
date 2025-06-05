@@ -21,7 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         merriweather: ["Merriweather", "serif"],
-        playfair: ['"Playfair Display"', 'serif'],
+        playfair: ["Playfair Display", 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -79,7 +79,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [import("tailwindcss-animate")],
 } satisfies Config
 
 export default config

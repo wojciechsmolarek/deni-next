@@ -3,7 +3,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import ContactForm from "@/components/contact-form"
-import { Sofa, Square, Bed, Home, Armchair, Circle, Factory, Users, Package, CircleCheckBig, MapPin, Phone, Mail } from "lucide-react"
+import { 
+  Sofa, 
+  Square, 
+  Bed, 
+  Home, 
+  Armchair, 
+  Circle, 
+  Factory, 
+  Users, 
+  Package, 
+  CircleCheckBig, 
+  MapPin, 
+  Phone, 
+  Mail 
+} from "lucide-react"
 
 export default function HomePage() {
   const services = [

@@ -6,7 +6,6 @@ import "./globals.css"
 // Initialize the merriweather font
 const merriweather = Merriweather({
   subsets: ["latin"],
-  display: "swap",
   weight: ["300", "400", "700", "900"],
   style: ["normal", "italic"],
   variable: "--font-merriweather",
@@ -37,8 +36,7 @@ export const metadata: Metadata = {
     title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
     description:
       "Szwalnia tapicerki meblowej w Jarocinie oferuje profesjonalne szycie poduszek dekoracyjnych, materacy, narożników. Produkty szyte ze niebywałą staronnością. Zapraszamy do współpracy.",
-  },
-    generator: 'v0.dev'
+  }
 }
 
 export default function RootLayout({

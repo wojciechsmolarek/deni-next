@@ -3,13 +3,13 @@ import type { Metadata } from "next"
 import { Merriweather } from "next/font/google"
 import "./globals.css"
 
-// Initialize the Playfair Display font
+// Initialize the merriweather font
 const merriweather = Merriweather({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "700", "900"],
   style: ["normal", "italic"],
-  variable: "--font-playfair",
+  variable: "--font-merriweather",
 })
 
 export const metadata: Metadata = {

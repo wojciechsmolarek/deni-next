@@ -40,6 +40,9 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -56,13 +59,4 @@
   h6 {
     font-family: "Monotype Corsiva", cursive;
   }
-}
-
-/* Monotype Corsiva font */
-@font-face {
-  font-family: "Monotype Corsiva";
-  src: url("/fonts/monotype-corsiva.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }

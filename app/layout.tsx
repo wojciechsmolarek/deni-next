@@ -1,15 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Merriweather } from "next/font/google"
 import "./globals.css"
-
-// Initialize the merriweather font
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-merriweather",
-})
 
 export const metadata: Metadata = {
   title: "Szwalnia tapicerki meblowej - szycie materacy i poduszek dekoracyjnych Jarocin - DENI",
@@ -45,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pl" className={merriweather.variable}>
+    <html lang="pl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/deni-logo.png" />

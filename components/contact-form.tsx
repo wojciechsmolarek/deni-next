@@ -59,7 +59,7 @@ export default function ContactForm() {
         phone: formData.phone,
         company: formData.company,
         message: formData.message,
-        subject: `Nowe zapytanie od ${formData.firstName} ${formData.lastName} - DENI`,
+        subject: `Wiadomość z formularza: deni.com.pl ${formData.email}`,
       }
 
       const response = await fetch("https://api.web3forms.com/submit", {

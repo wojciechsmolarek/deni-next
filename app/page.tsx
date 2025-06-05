@@ -101,7 +101,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background to-muted">
+      <section className="py-[6rem] bg-gradient-to-br from-background to-muted">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section id="uslugi" className="py-20 bg-background">
+      <section id="uslugi" className="py-[6rem] bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza oferta</h2>
@@ -172,7 +172,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-[6rem] bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">
@@ -198,7 +198,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="o-nas" className="py-20 bg-background">
+      <section id="o-nas" className="py-[6rem] bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -242,7 +242,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="kontakt" className="py-20 bg-muted">
+      <section id="kontakt" className="py-[6rem] bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-foreground">Skontaktuj się z nami</h2>
@@ -297,7 +297,7 @@ export default function HomePage() {
       </section>
 
       {/* Map Section */}
-      <section id="lokalizacja" className="py-20 bg-background">
+      <section id="lokalizacja" className="py-[6rem] bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza lokalizacja</h2>

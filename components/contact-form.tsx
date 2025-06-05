@@ -206,7 +206,7 @@ export default function ContactForm() {
 
           <Button
             type="submit"
-            className="w-full bg-secondary hover:bg-secondary/90 text-lg"
+            className="w-full bg-secondary hover:bg-secondary/90 text-white text-lg"
             disabled={isLoading}
           >
             {isLoading ? "Wysyłanie..." : "Wyślij zapytanie"}

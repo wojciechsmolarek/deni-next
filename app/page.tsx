@@ -1,76 +1,83 @@
+import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import ContactForm from "@/components/contact-form"
-import { 
-  Sofa, 
-  Square, 
-  Bed, 
-  Home, 
-  Armchair, 
-  Circle, 
-  Factory, 
-  Users, 
-  Package, 
-  CircleCheckBig, 
-  MapPin, 
-  Phone, 
-  Mail 
-} from "lucide-react"
+
+// Dynamiczne importowanie komponentów
+const ContactForm = dynamic(() => import('@/components/contact-form'), {
+  loading: () => <div className="animate-pulse bg-muted h-[400px] rounded-lg" />
+})
+
+// Dynamiczne importowanie ikon
+const icons = {
+  Sofa: dynamic(() => import('lucide-react').then(mod => mod.Sofa)),
+  Square: dynamic(() => import('lucide-react').then(mod => mod.Square)),
+  Bed: dynamic(() => import('lucide-react').then(mod => mod.Bed)),
+  Home: dynamic(() => import('lucide-react').then(mod => mod.Home)),
+  Armchair: dynamic(() => import('lucide-react').then(mod => mod.Armchair)),
+  Circle: dynamic(() => import('lucide-react').then(mod => mod.Circle)),
+  Factory: dynamic(() => import('lucide-react').then(mod => mod.Factory)),
+  Users: dynamic(() => import('lucide-react').then(mod => mod.Users)),
+  Package: dynamic(() => import('lucide-react').then(mod => mod.Package)),
+  CircleCheckBig: dynamic(() => import('lucide-react').then(mod => mod.CircleCheckBig)),
+  MapPin: dynamic(() => import('lucide-react').then(mod => mod.MapPin)),
+  Phone: dynamic(() => import('lucide-react').then(mod => mod.Phone)),
+  Mail: dynamic(() => import('lucide-react').then(mod => mod.Mail)),
+}
 
 export default function HomePage() {
   const services = [
     {
       title: "Kanapy modułowe",
       description: "Profesjonalne wykonanie kanap modułowych dla producentów mebli",
-      icon: <Sofa className="h-8 w-8" />,
+      icon: <icons.Sofa className="h-8 w-8" />,
     },
     {
       title: "Poduszki",
       description: "Wysokiej jakości poduszki tapicerskie i dekoracyjne",
-      icon: <Square className="h-8 w-8" />,
+      icon: <icons.Square className="h-8 w-8" />,
     },
     {
       title: "Łóżka",
       description: "Tapicerowane łóżka i elementy sypialniane",
-      icon: <Bed className="h-8 w-8" />,
+      icon: <icons.Bed className="h-8 w-8" />,
     },
     {
       title: "Komplety tapicerowane",
       description: "Kompletne zestawy mebli tapicerowanych",
-      icon: <Home className="h-8 w-8" />,
+      icon: <icons.Home className="h-8 w-8" />,
     },
     {
       title: "Sofy i fotele",
       description: "Profesjonalne wykonanie sof i foteli dla biznesu",
-      icon: <Armchair className="h-8 w-8" />,
+      icon: <icons.Armchair className="h-8 w-8" />,
     },
     {
       title: "Pufy",
       description: "Stylowe pufy i dodatki tapicerskie",
-      icon: <Circle className="h-8 w-8" />,
+      icon: <icons.Circle className="h-8 w-8" />,
     },
   ]
 
   const features = [
     {
-      icon: <Factory className="h-6 w-6" />,
+      icon: <icons.Factory className="h-6 w-6" />,
       title: "Nowoczesny park maszynowy",
       description: "Dysponujemy najnowocześniejszym sprzętem do szycia przemysłowego",
     },
     {
-      icon: <Users className="h-6 w-6" />,
+      icon: <icons.Users className="h-6 w-6" />,
       title: "Doświadczony zespół",
       description: "Nasi specjaliści mają wieloletnie doświadczenie w branży",
     },
     {
-      icon: <Package className="h-6 w-6" />,
+      icon: <icons.Package className="h-6 w-6" />,
       title: "Duże wolumeny",
       description: "Realizujemy zamówienia seryjne i projekty w dużych ilościach",
     },
     {
-      icon: <CircleCheckBig className="h-6 w-6" />,
+      icon: <icons.CircleCheckBig className="h-6 w-6" />,
       title: "Najwyższa jakość",
       description: "Gwarantujemy wysoką jakość wykonania i terminowość",
     },
@@ -96,34 +103,34 @@ export default function HomePage() {
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Menu główne">
             <a
               href="#uslugi"
-              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
+              className="text-foreground hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji usługi"
             >
               Usługi
             </a>
             <a 
               href="#o-nas" 
-              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
+              className="text-foreground hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji o nas"
             >
               O nas
             </a>
             <a
               href="#kontakt"
-              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
+              className="text-foreground hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji kontakt"
             >
               Kontakt
             </a>
             <a
               href="#lokalizacja"
-              className="text-foreground/80 hover:text-secondary transition-colors font-playfair text-xl"
+              className="text-foreground hover:text-secondary transition-colors font-playfair text-xl"
               aria-label="Przejdź do sekcji lokalizacja"
             >
               Lokalizacja
             </a>
           </nav>
-          <Button asChild className="bg-secondary hover:bg-secondary/90 font-playfair text-lg">
+          <Button asChild className="bg-secondary hover:bg-secondary/90 text-white font-playfair text-lg">
             <a href="#kontakt" aria-label="Przejdź do formularza kontaktowego">Skontaktuj się</a>
           </Button>
         </div>
@@ -138,19 +145,19 @@ export default function HomePage() {
               <h1 id="hero-heading" className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
                 Profesjonalna <span className="text-secondary">szwalnia tapicerki meblowej</span>
               </h1>
-              <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+              <p className="text-xl text-foreground mb-8 leading-relaxed">
                 Doświadczona szwalnia realizująca zamówienia dla producentów mebli, łóżek, sof i narożników.
                 Specjalizujemy się w projektach seryjnych i nietypowych zleceniach.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 font-playfair text-xl">
+                <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-white font-playfair text-xl">
                   <a href="#uslugi" aria-label="Przejdź do sekcji usługi">Zobacz nasze usługi →</a>
                 </Button>
                 <Button
                   size="lg"
                   asChild
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10 font-playfair text-xl"
+                  className="border-secondary text-secondary hover:bg-secondary/10 font-playfair text-xl"
                 >
                   <a href="#kontakt" aria-label="Przejdź do formularza kontaktowego">Skontaktuj się z nami</a>
                 </Button>
@@ -178,7 +185,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 id="services-heading" className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza oferta</h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Oferujemy kompleksowe usługi szycia przemysłowego dla firm z całej Polski. Realizujemy zamówienia seryjne,
               prototypy oraz nietypowe projekty.
             </p>
@@ -192,7 +199,7 @@ export default function HomePage() {
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-foreground/80">{service.description}</CardDescription>
+                  <CardDescription className="text-foreground">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -207,7 +214,7 @@ export default function HomePage() {
             <h2 id="features-heading" className="text-3xl lg:text-5xl font-bold text-foreground mb-4">
               Dlaczego wybierają nas firmy z całej Polski?
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Jesteśmy sprawdzonym partnerem biznesowym dla producentów mebli, firm akustycznych i innych
               przedsiębiorstw wymagających wysokiej jakości usług szwalniczych.
             </p>
@@ -220,7 +227,7 @@ export default function HomePage() {
                   {feature.icon}
                 </div>
                 <h3 className="text-2xl font-playfair text-foreground mb-2">{feature.title}</h3>
-                <p className="text-foreground/80">{feature.description}</p>
+                <p className="text-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -233,11 +240,11 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 id="about-heading" className="text-3xl lg:text-5xl font-bold text-foreground mb-6">O firmie Deni</h2>
-              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+              <p className="text-lg text-foreground mb-6 leading-relaxed">
                 Deni to doświadczona szwalnia usługowa z Jarocina, która od lat realizuje zamówienia dla firm z całej
                 Polski. Naszymi głównymi klientami są producenci mebli, łóżek, sof, a także firmy z branży akustycznej.
               </p>
-              <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+              <p className="text-lg text-foreground mb-8 leading-relaxed">
                 Wykonujemy pokrowce na głośniki oraz elementy tapicerskie. Nasza firma dysponuje nowoczesnym parkiem
                 maszynowym i doświadczonym zespołem specjalistów, co pozwala nam realizować nawet najbardziej wymagające
                 projekty w dużych wolumenach.
@@ -245,11 +252,11 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-6" role="list" aria-label="Statystyki firmy">
                 <div role="listitem">
                   <div className="text-3xl font-bold text-secondary mb-2 font-playfair">8+</div>
-                  <div className="text-foreground/80">Lat doświadczenia</div>
+                  <div className="text-foreground">Lat doświadczenia</div>
                 </div>
                 <div role="listitem">
                   <div className="text-3xl font-bold text-secondary mb-2 font-playfair">100+</div>
-                  <div className="text-foreground/80">Zrealizowanych projektów</div>
+                  <div className="text-foreground">Zrealizowanych projektów</div>
                 </div>
               </div>
             </div>
@@ -274,7 +281,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 id="contact-heading" className="text-3xl lg:text-5xl font-bold mb-4 text-foreground">Skontaktuj się z nami</h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Jesteś zainteresowany naszymi usługami? Skontaktuj się z nami już dziś i omówmy Twój projekt.
             </p>
           </div>
@@ -285,21 +292,21 @@ export default function HomePage() {
               <div className="grid md:grid-cols-1 gap-8" role="list" aria-label="Informacje kontaktowe">
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <MapPin className="h-6 w-6 text-white" />
+                    <icons.MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Adres</span>
-                    <p className="text-foreground/80">Jarocin ul. Wojska polskiego 47, Polska</p>
+                    <p className="text-foreground">Jarocin ul. Wojska polskiego 47, Polska</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <Phone className="h-6 w-6 text-white" />
+                    <icons.Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Telefon</span>
-                    <p className="text-foreground/80">
+                    <p className="text-foreground">
                       <a href="tel:+48607442592" aria-label="Zadzwoń do nas">+48 607 442 592</a>
                     </p>
                   </div>
@@ -307,11 +314,11 @@ export default function HomePage() {
 
                 <div className="flex items-center space-x-4" role="listitem">
                   <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" aria-hidden="true">
-                    <Mail className="h-6 w-6 text-white" />
+                    <icons.Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <span className="text-xl mb-1">Email</span>
-                    <p className="text-foreground/80">
+                    <p className="text-foreground">
                       <a href="mailto:biuro@deni.com.pl" aria-label="Napisz do nas">biuro@deni.com.pl</a>
                     </p>
                   </div>
@@ -329,7 +336,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 id="location-heading" className="text-3xl lg:text-5xl font-bold text-foreground mb-4">Nasza lokalizacja</h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Znajdziesz nas w Jarocinie. Zapraszamy do odwiedzenia naszej szwalni.
             </p>
           </div>
@@ -358,7 +365,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   aria-label="Otwórz lokalizację w Google Maps"
                 >
-                  <MapPin className="lucide lucide-map-pin mr-2 h-4 w-4" aria-hidden="true" /> Otwórz w Google Maps
+                  <icons.MapPin className="lucide lucide-map-pin mr-2 h-4 w-4" aria-hidden="true" /> Otwórz w Google Maps
                 </a>
               </Button>
             </div>
@@ -381,14 +388,14 @@ export default function HomePage() {
                 </g>
               </svg>
               </div>
-              <p className="text-foreground/70">
+              <p className="text-foreground">
                 Profesjonalna szwalnia usługowa z Jarocina. Sprawdzony partner dla biznesu.
               </p>
             </div>
 
             <div>
               <span className="block text-xl font-playfair mb-4">Usługi</span>
-              <ul className="space-y-2 text-foreground/70" role="list" aria-label="Lista usług">
+              <ul className="space-y-2 text-foreground" role="list" aria-label="Lista usług">
                 <li>Kanapy modułowe</li>
                 <li>Poduszki tapicerskie</li>
                 <li>Łóżka tapicerowane</li>
@@ -398,7 +405,7 @@ export default function HomePage() {
 
             <div>
               <span className="block text-xl font-playfair mb-4">Kontakt</span>
-              <ul className="space-y-2 text-foreground/70" role="list" aria-label="Dane kontaktowe">
+              <ul className="space-y-2 text-foreground" role="list" aria-label="Dane kontaktowe">
                 <li>ul. Wojska polskiego 47</li>
                 <li>63-200 Jarocin, Polska</li>
                 <li>NIP: 6171201286</li>
@@ -413,7 +420,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-border mt-8 pt-8 text-center text-foreground/70">
+          <div className="border-t border-border mt-8 pt-8 text-center text-foreground">
             <p>
               &copy; 2025 Deni. Wszystkie prawa zastrzeżone. Projekt i wykonanie:{" "}
               <a href="https://www.wojciechsmolarek.pl/" className="underline" aria-label="Strona autora projektu">wojciechsmolarek.pl</a>

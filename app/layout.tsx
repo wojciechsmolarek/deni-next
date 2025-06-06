@@ -116,6 +116,7 @@ export default function RootLayout({
             })
           }}
         />
+        <meta name="google-site-verification" content="lmlRm121sTSv3Z7XWm8PLJiY_rGxNiMjBGT1FDkJn4M" />
       </head>
       <body className={cn("min-h-screen bg-background font-sans antialiased")}>
         <ThemeProvider

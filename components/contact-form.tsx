@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -38,6 +37,23 @@ export default function ContactForm() {
     message: "",
   })
 
+  // Prosta walidacja e-maila
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+  // Możesz dodać więcej walidacji tutaj
+  const validateForm = () => {
+    if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setStatus({ type: "error", message: "Uzupełnij wszystkie wymagane pola." })
+      return false
+    }
+    if (!validateEmail(formData.email)) {
+      setStatus({ type: "error", message: "Podaj poprawny adres e-mail." })
+      return false
+    }
+    return true
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -48,6 +64,9 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    // WALIDACJA PRZED WYSŁANIEM
+    if (!validateForm()) return
 
     setStatus({ type: "loading", message: "Wysyłanie..." })
 
@@ -73,12 +92,12 @@ export default function ContactForm() {
 
       const result = await response.json()
 
-      if (response.status === 200) {
+      // LEPSZA OBSŁUGA STATUSU
+      if (response.status === 200 && result.success) {
         setStatus({
           type: "success",
           message: "Dziękujemy! Wiadomość została wysłana. Skontaktujemy się z Tobą w ciągu 24 godzin.",
         })
-
         setFormData({
           firstName: "",
           lastName: "",
@@ -114,7 +133,7 @@ export default function ContactForm() {
         <CardDescription>Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6" autoComplete="off">
           <input
             type="checkbox"
             name="botcheck"

@@ -7,6 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import dynamic from "next/dynamic"
+
+const PrivacyPolicyModal = dynamic(
+  () => import("@/components/privacy-policy-modal"),
+  { ssr: false }
+)
 
 interface FormData {
   firstName: string
@@ -37,18 +43,28 @@ export default function ContactForm() {
     message: "",
   })
 
-  // Prosta walidacja e-maila
+  const [acceptPrivacy, setAcceptPrivacy] = useState(false)
+  const [showPolicy, setShowPolicy] = useState(false)
+
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-  // Możesz dodać więcej walidacji tutaj
   const validateForm = () => {
-    if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.firstName.trim() ||
+      !formData.lastName.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       setStatus({ type: "error", message: "Uzupełnij wszystkie wymagane pola." })
       return false
     }
     if (!validateEmail(formData.email)) {
       setStatus({ type: "error", message: "Podaj poprawny adres e-mail." })
+      return false
+    }
+    if (!acceptPrivacy) {
+      setStatus({ type: "error", message: "Zaakceptuj politykę prywatności." })
       return false
     }
     return true
@@ -64,8 +80,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    // WALIDACJA PRZED WYSŁANIEM
     if (!validateForm()) return
 
     setStatus({ type: "loading", message: "Wysyłanie..." })
@@ -92,7 +106,6 @@ export default function ContactForm() {
 
       const result = await response.json()
 
-      // LEPSZA OBSŁUGA STATUSU
       if (response.status === 200 && result.success) {
         setStatus({
           type: "success",
@@ -106,6 +119,7 @@ export default function ContactForm() {
           company: "",
           message: "",
         })
+        setAcceptPrivacy(false)
       } else {
         setStatus({
           type: "error",
@@ -223,6 +237,44 @@ export default function ContactForm() {
             />
           </div>
 
+          <div className="flex items-center space-x-2">
+            <input
+              id="accept-privacy"
+              name="accept-privacy"
+              type="checkbox"
+              checked={acceptPrivacy}
+              onChange={e => setAcceptPrivacy(e.target.checked)}
+              required
+              disabled={isLoading}
+              className="accent-secondary"
+            />
+            <Label htmlFor="accept-privacy" className="text-sm">
+              Wysyłając formularz akceptujesz{" "}
+              <button
+                type="button"
+                className="underline text-secondary"
+                onClick={() => setShowPolicy(true)}
+                tabIndex={-1}
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  margin: 0,
+                  cursor: "pointer",
+                }}
+              >
+                politykę prywatności
+              </button>
+            </Label>
+          </div>
+
+          {showPolicy && (
+            <PrivacyPolicyModal
+              isOpen={showPolicy}
+              onClose={() => setShowPolicy(false)}
+            />
+          )}
+
           <Button
             type="submit"
             className="w-full bg-secondary hover:bg-secondary/90 text-white text-lg"
@@ -237,8 +289,8 @@ export default function ContactForm() {
                 status.type === "success"
                   ? "bg-green-50 text-green-700 border border-green-200"
                   : status.type === "error"
-                    ? "bg-red-50 text-red-700 border border-red-200"
-                    : "bg-blue-50 text-blue-700 border border-blue-200"
+                  ? "bg-red-50 text-red-700 border border-red-200"
+                  : "bg-blue-50 text-blue-700 border border-blue-200"
               }`}
             >
               {status.message}

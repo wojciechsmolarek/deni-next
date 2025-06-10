@@ -9,23 +9,6 @@
       "source": "/webmail/",
       "destination": "https://poczta.hostido.pl/",
       "statusCode": 301
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "www.deni.com.pl" }
-      ],
-      "destination": "https://deni.com.pl/:1",
-      "statusCode": 301
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "deni.com.pl" },
-        { "type": "protocol", "value": "http" }
-      ],
-      "destination": "https://deni.com.pl/:1",
-      "statusCode": 301
     }
   ],
   "headers": [

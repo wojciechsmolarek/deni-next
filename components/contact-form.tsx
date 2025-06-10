@@ -265,6 +265,7 @@ export default function ContactForm() {
               >
                 politykę prywatności
               </button>
+              {" "} *
             </Label>
           </div>
 

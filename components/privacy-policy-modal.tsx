@@ -16,7 +16,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div className="fixed inset-0 z-50 mt-0 flex items-center justify-center bg-black/50">
       <div className="bg-white rounded-lg max-w-lg w-full p-6 relative">
         <button
           className="absolute top-2 right-2 text-xl"

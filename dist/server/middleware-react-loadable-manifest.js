@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"components/contact-form.tsx -> @/components/privacy-policy-modal\":{\"id\":\"components/contact-form.tsx -> @/components/privacy-policy-modal\",\"files\":[\"static/chunks/_app-pages-browser_components_privacy-policy-modal_tsx.js\"]}}"
